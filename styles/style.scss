@@ -1,0 +1,193 @@
+@use "sass:math";
+@function toVw($target) {
+  $vw-context: (1920 * 0.01) * 1px;
+  @return math.div($target, $vw-context) * 1vw;
+}
+
+@mixin flex-align-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+@mixin align-items-center {
+  @include flex-between();
+  align-items: center;
+}
+
+@mixin flex-bottom-center {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+$c-purple: #8D86C9;
+$transition: .3s;
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a{
+  text-decoration: none;
+}
+
+body{
+  font-size: toVw(14px);
+  font-family: sans-serif;
+}
+
+ul{
+  list-style: none;
+}
+
+.container{
+  width: toVw(1296px);
+  margin: auto;
+}
+
+.container.center{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+header{
+  background-image: url('../img/header-bg-image.jpg');
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  padding-top: toVw(30px);
+  color: #fff;
+  position: relative;
+
+  .services{
+    display: flex;
+    gap: toVw(12px);
+
+    .service{
+      background-color: $c-purple;
+      width: 100%;
+      padding: toVw(35px) toVw(35px) toVw(40px) toVw(35px);
+      overflow: hidden;
+      cursor: pointer;
+
+      &:hover{
+        .info{
+          transform: translateY(0);
+        }
+        span{
+          font-size: toVw(18px);
+          text-align: left;
+        }
+      }
+
+      span{
+        display: block;
+        font-size: toVw(50px);
+        margin-bottom: toVw(17px);
+        transition: $transition;
+      }
+
+      .info{
+        display: flex;
+        width: 100%;
+        transform: translateY(100px);
+        transition: $transition;
+        h3{
+          font-size: toVw(24px);
+        }
+      }
+    }
+  }
+
+  .main-title{
+    font-size: toVw(48px);
+    margin-top: toVw(200px);
+  }
+
+  .header-line{
+    margin-top: toVw(30px);
+  }
+
+  .header-top-info{
+    @include flex-between();
+  }
+
+  .logo{
+    img{
+      width: toVw(153px);
+    }
+  }
+
+  .menu{
+    @include align-items-center();
+    gap: toVw(40px);
+    a{
+      color: #fff;
+    }
+  }
+
+  .social-media{
+    @include flex-align-center();
+    img{
+      width: toVw(36px);
+      height: toVw(36px);
+    }
+  }
+}
+
+.features-section{
+  margin-top: toVw(150px);
+}
+
+.features{
+  @include flex-between();
+  gap: toVw(24px);
+  .feature{
+    @include flex-bottom-center();
+    width: 100%;
+    padding: toVw(25px) toVw(20px);
+    border: 1px solid #F7ECE1;
+    height: toVw(500px);
+    text-align: center;
+    color: #fff;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-size: toVw(27px);
+    cursor: pointer;
+    overflow: hidden;
+
+    &:hover{
+      h3{
+        margin-bottom: 0;
+      }
+    }
+
+    h3{
+      margin-bottom: -100%;;
+      transition: $transition;
+    }
+
+    &:first-child{
+      background-image: url('../img/girl.jpg');
+    }
+
+    &:nth-child(2){
+      background-image: url('../img/ball.jpg');
+    }
+
+    &:last-child{
+      background-image: url('../img/balls.jpg');
+    }
+  }
+}
