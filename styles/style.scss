@@ -219,7 +219,9 @@ header{
       background-repeat: no-repeat;
       background-size: cover;
       position: absolute;
+      transition: .3s;
       left: toVw(-($tennisWidth / 1.15));
+      transform: revert;
     }
     .sport-list-wrapper{
       margin-top: toVw(35px);
@@ -227,10 +229,44 @@ header{
         font-size: toVw(21px);
         margin-bottom: toVw(25px);
       }
+      nav{
+        ul{
+          li{
+            position: relative;
+            margin-bottom: toVw(30px);
+            &::before{
+              content: '';
+              display: block;
+              width: toVw(8px);
+              height: toVw(8px);
+              left: toVw(-23px);
+              position: absolute;
+              background-color: #8D86C9;
+            }
+          }
+        }
+      }
     }
     h2{
       font-size: toVw(36px);
       margin-bottom: toVw(25px);
+    }
+  }
+}
+
+.stuff-section{
+  margin-top: toVw(100px);
+  .stuff-wrapper{
+    .stuff-slider{
+      display: flex;
+      overflow: scroll;
+    }
+    .stuff-top{
+      @include flex-between();
+      margin-bottom: toVw(40px);
+      h3{
+        font-size: toVw(36px);
+      }
     }
   }
 }
