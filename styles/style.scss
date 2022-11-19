@@ -26,7 +26,10 @@
 }
 
 $c-purple: #8D86C9;
+$c-bedge: #F7ECE1;
 $transition: .3s;
+
+$tennisWidth: 526px;
 
 *{
   margin: 0;
@@ -188,6 +191,46 @@ header{
 
     &:last-child{
       background-image: url('../img/balls.jpg');
+    }
+  }
+}
+
+.sport-club{
+  margin-top: toVw(100px);
+  .sport-club-wrapper{
+    display: flex;
+    justify-content: flex-end;
+  }
+  .sport-club-info{
+    background-color: $c-bedge;
+    width: toVw(636px);
+    padding-top: toVw(70px);
+    padding-left: toVw(146px);
+    padding-right: toVw(60px);
+    padding-bottom: toVw(84px);
+    position: relative;
+    &::before{
+      content: '';
+      display: block;
+      width: toVw($tennisWidth);
+      height: toVw(514px);
+      background-image: url('../img/tennis.jpg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: absolute;
+      left: toVw(-($tennisWidth / 1.15));
+    }
+    .sport-list-wrapper{
+      margin-top: toVw(35px);
+      h3{
+        font-size: toVw(21px);
+        margin-bottom: toVw(25px);
+      }
+    }
+    h2{
+      font-size: toVw(36px);
+      margin-bottom: toVw(25px);
     }
   }
 }

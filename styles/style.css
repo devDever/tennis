@@ -144,4 +144,44 @@ header .social-media img {
 }
 .features .feature:last-child {
   background-image: url("../img/balls.jpg");
+}
+
+.sport-club {
+  margin-top: 5.2083333333vw;
+}
+.sport-club .sport-club-wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+.sport-club .sport-club-info {
+  background-color: #F7ECE1;
+  width: 33.125vw;
+  padding-top: 3.6458333333vw;
+  padding-left: 7.6041666667vw;
+  padding-right: 3.125vw;
+  padding-bottom: 4.375vw;
+  position: relative;
+}
+.sport-club .sport-club-info::before {
+  content: "";
+  display: block;
+  width: 27.3958333333vw;
+  height: 26.7708333333vw;
+  background-image: url("../img/tennis.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  left: -23.8224637681vw;
+}
+.sport-club .sport-club-info .sport-list-wrapper {
+  margin-top: 1.8229166667vw;
+}
+.sport-club .sport-club-info .sport-list-wrapper h3 {
+  font-size: 1.09375vw;
+  margin-bottom: 1.3020833333vw;
+}
+.sport-club .sport-club-info h2 {
+  font-size: 1.875vw;
+  margin-bottom: 1.3020833333vw;
 }/*# sourceMappingURL=style.css.map */
